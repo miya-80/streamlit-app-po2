@@ -23,8 +23,6 @@ st.markdown(
     "<span style='color: red;'>公開用のため、テストサンプルのみでの動作します</span>",
     unsafe_allow_html=True
 )
-st.markdown(f"### Excelファイルはこちらからダウンロードできます")
-st.markdown(f"[サンプルのExcelファイルを開く]({ct.EXCEL_URL})")
 
 # =========================
 # 初期化
@@ -42,7 +40,7 @@ use_sample = st.checkbox(ct.EXCEL_SAMPLE_USE)
 # =========================
 # ボタン（常に表示）
 # =========================
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     start_clicked = st.button(ct.START_BUTTON)
@@ -52,6 +50,9 @@ with col2:
 
 with col3:
     delete_all_session = st.button(ct.DELET_BUTTON)
+
+with col4:
+    open_session_clicked = st.button(ct.EXCEL_BUTTON)
 
 
 #######################################################
@@ -113,6 +114,11 @@ elif transfer_clicked and not use_sample:
 if st.session_state.get("excel_loaded_message", False) and use_sample:
         st.success(ct.EXCEL_LOADED)
 
+if open_session_clicked:
+    df = pd.read_excel(ct.DEFAULT_EXCEL_PATH, engine='openpyxl')
+    # DataFrameの内容を画面に表示 
+    st.dataframe(df)
+   
     # =========================
 # プルダウン（常に表示）
 # =========================

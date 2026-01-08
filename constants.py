@@ -15,7 +15,6 @@ DEFAULT_EXCEL_PATH = Path(__file__).parent / "test_file.xlsx"
 EXCEL_SAMPLE_USE = "サンプルExcel（test_file.xlsx）を使用する"
 EXCEL_MESSAGE = "Excelを添付後にスタートを押してください"
 SHEET_INDEX = 0  # シート1（0始まり）
-EXCEL_URL = "https://github.com/miya80//blob/main/test_file.xlsx?raw=true"
 
 
 #######################################################
@@ -26,6 +25,7 @@ EXCEL_URL = "https://github.com/miya80//blob/main/test_file.xlsx?raw=true"
 START_BUTTON = "スタート"
 SEND_BUTTON = "Amazonへ転送"
 DELET_BUTTON = "セッション再起動"
+EXCEL_BUTTON ="Excel表示"
 
 # プルダウン
 FIELD_CATEGORIES_NAME = "分野別カテゴリー"
