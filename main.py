@@ -118,8 +118,7 @@ if open_session_clicked:
     df = pd.read_excel(ct.DEFAULT_EXCEL_PATH, engine='openpyxl')
     # DataFrameの内容を画面に表示 
     st.dataframe(df)
-   
-    # =========================
+# =========================
 # プルダウン（常に表示）
 # =========================
 if st.session_state.loaded:
